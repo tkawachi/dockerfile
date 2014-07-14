@@ -10,9 +10,9 @@ RUN sudo pip install awscli
 
 # Install Haxe
 WORKDIR /tmp
-RUN wget -q -c http://www.openfl.org/builds/haxe/haxe-3.1.3-linux-installer.tar.gz
-RUN tar xzf haxe-3.1.3-linux-installer.tar.gz
-RUN ./install-haxe.sh y
+RUN wget -q -c https://gist.githubusercontent.com/tkawachi/69a308f660dc03d631b4/raw/80d303706df6000397ee985fcbfa5de0c8f73fc2/install-haxe.sh
+RUN bash install-haxe.sh y
+RUN rm install-haxe.sh
 RUN haxelib install jQueryExtern
 RUN haxelib install hxopt
 WORKDIR /home/ubuntu
